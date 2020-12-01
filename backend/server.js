@@ -1,15 +1,14 @@
-const express = require('express')
-const path = require('path')
+const express = require( 'express')
+const path = require( 'path')
 require('./db/mongoose')
-const userRouter = require('./router/User')
-const eventRouter = require('./router/Event')
-const categoryRouter = require('./router/Category')
-const typeRouter = require('./router/Type')
-const Category = require('./model/Category')
-const Type = require('./model/Type')
+const userRouter = require( './router/User')
+const eventRouter = require( './router/Event')
+const categoryRouter = require( './router/Category')
+const typeRouter = require( './router/Type')
+const Category = require( './model/Category')
+const Type = require( './model/Type')
 const app = express()
 const port = process.env.PORT
-const geocode = require('./controllers/geocode')
 
 app.use(express.json())
 app.use('/api/user', userRouter)
@@ -29,12 +28,17 @@ app.get('/api/typesAndCategories', async(req,res) =>{
     }
 })
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '/frontend/build')))
 
-  app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
-  )
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../frontend/build')))
+
+  app.get('*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        error: 'Page not found',
+
+    })
+})
 } else {
   app.get('/', (req, res) => {
     res.send('API is running....')
