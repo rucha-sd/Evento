@@ -1,0 +1,30 @@
+.collapse.navbar-collapse .navbar-nav{
+    margin: auto;
+}
+
+.navbar-brand{
+    margin-right: -0.5vw;
+}
+
+.navbar-brand a{
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    font-size: 1.3vw;
+    padding: 0.5vw 1.5vw;
+}
+
+.navbar-light .navbar-nav .nav-link.active{
+    border-bottom: 0.2vw solid #45c41a93;
+}
+
+.navbar-brand img{
+    width: 3.5vw;
+    border-radius: 4vw;
+}
+
+.navbar-brand.active img{
+    border: 3px solid #000000;
+}

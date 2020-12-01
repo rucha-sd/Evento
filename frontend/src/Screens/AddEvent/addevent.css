@@ -1,0 +1,114 @@
+.event-info{
+    padding: 3vw;
+    background-color: rgb(223, 240, 195);
+    margin-top: 4vw;
+    border-radius: 1vw;
+}
+
+.event-info .section-title{
+    font-size: 1.4vw;
+    font-weight: 500;
+    margin-top: 1vw;
+}
+
+.event-info input[type="text"]{
+    width: 100%;
+    margin: 1vw 0;
+    height: 3vw;
+    font-size: 1.2vw;
+    padding: 0 1vw;
+    border-radius: 0;
+    border: none;
+}
+
+.event-info textarea{
+    width: 100%;
+    padding: 0 1vw;
+    resize: none;
+    border-radius: 0;
+    border: none;
+    font-size: 1.2vw;
+    height: 6vw;
+    padding: 1vw;
+}
+
+.event-info label{
+    width: 100%;
+    margin-top: 1vw;
+    font-size: 1.3vw;
+}
+
+.event-info input[type="date"],input[type="time"]{
+
+    outline: none;
+    width: 70%;
+    margin-left: auto;
+    align-self: flex-end;
+    margin: 1vw 0 0 0.5vw;
+
+} 
+
+.event-info span{
+    color: rgb(77, 3, 31);
+}
+
+.submit-cancel{
+    text-align: right;
+    margin-top: 2vw;
+}
+
+.submit-cancel button{
+    min-width: 8vw;
+    padding: 0.5vw 1vw;
+    font-size: 1.2vw;
+    border-radius: 2vw;
+    margin-left: 1vw;
+    outline: none;
+}
+
+.submit-cancel button.send{
+    background-color: rgb(56, 65, 122);
+    color: #FFFFFF;
+    border:  1px solid rgb(56, 65, 122);
+}
+
+.submit-cancel button.send:hover{
+    background-color: transparent;
+    color: rgb(56, 65, 122);
+}
+
+.submit-cancel button.cancel{
+    background-color: red;
+    color: #FFFFFF;
+    border:  1px solid red;
+}
+
+.submit-cancel button.cancel:hover{
+    background-color: transparent;
+    color: red;
+}
+
+.event-info select{
+    width: 100%;
+    height: 2.5vw;
+}
+
+.event-image{
+    font-size: 1.5vw;
+}
+
+.event-info input[type="file"]{
+    margin-top: 1vw;
+}
+
+.event-info .e-image{
+    height: 20vw;
+}
+
+.event-info .e-image img{
+    height: 100%;
+    width: 100%;
+    margin-top: 1vw;
+    padding-bottom: 1vw;
+    cursor: pointer;
+}

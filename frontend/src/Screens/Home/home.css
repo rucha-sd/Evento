@@ -1,0 +1,61 @@
+.home{
+    padding: 10vw 0 2vw;
+}
+
+.home .container{
+    max-width: 85%;
+}
+
+.home .card{
+    margin: 1vw 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.home .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.filters .city, .date{
+    font-size: 1.2vw;
+    padding: 0.3vw 1vw;
+    margin-bottom: 2vw;
+}
+
+.filters .city{
+    background-color: tomato;
+    color: #FFFFFF;
+}
+
+.filters .date{
+    background-color: steelblue;
+    color: #FFFFFF;
+}
+
+.navbar-brand-logo img{
+    width: 8vw;
+    height: 3vw;
+    outline: none;
+}
+
+.filters select, input[type="date"]{
+    outline:  none;
+    background-color: transparent;
+    border: none;
+    margin-left: 1vw;
+    color: #FFFFFF;
+}
+
+.filters select{
+    background-color: tomato;
+}
+
+.filters button{
+    font-size: 1.2vw;
+    padding: 0.3vw 1vw;
+    margin-bottom: 2vw;
+    background-color: rgb(245, 130, 130);
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+}

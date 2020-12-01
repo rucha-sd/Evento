@@ -1,0 +1,19 @@
+.switch{
+    margin: 3vw 0 0;
+}
+
+.switch button{
+    min-width: 10vw;
+    padding: 0.5vw 1vw;
+    font-size: 1.3vw;
+    background-color: #ffffff;
+    border: 1px solid rgb(56, 65, 122);
+    color: rgb(56, 65, 122);
+    outline: none;
+    font-weight: 500;
+}
+
+.switch button.active{
+    background-color: rgb(56, 65, 122);
+    color: #FFFFFF;
+}

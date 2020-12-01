@@ -1,0 +1,106 @@
+.profile-pic img{
+    width: 50%;
+    height: auto;
+    border-radius: 50vw;
+    border: 0.2vw solid #000000;
+}
+
+.profile{
+    padding: 4vw 0 2vw;
+}
+
+.username{
+    font-size: 2vw;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 2vw;
+}
+
+.logout{
+    text-align: center;
+}
+
+.logout button{
+    font-size: 1.3vw;
+    margin-top: 3vw;
+    width: 50%;
+    background-color: rgb(252, 40, 40);
+    color: #FFFFFF;
+    font-weight: 500;
+    padding: 0.5vw 1vw;
+    border: 1px solid rgb(252, 40, 40);
+    outline: none;
+    border-radius: 3px;
+}
+
+.profile input{
+    width: 80%;
+    height: 3vw;
+    background-color: rgba(200, 233, 248, 0.459) !important;
+    border: none;
+    padding: 0 1vw;
+    font-size: 1.3vw;
+    margin-bottom: 1.5vw;
+    color: #000000;
+}
+
+.changepass{
+    font-size: 1.3vw;
+    margin-bottom: 1.5vw;
+    font-weight: 500;
+}
+
+.save button{
+    font-size: 1.3vw;
+    width: 80%;
+    background-color: #45c41a;
+    color: #FFFFFF;
+    font-weight: 500;
+    padding: 0.5vw 1vw;
+    border: 1px solid #45c41a;
+    outline: none;
+    border-radius: 3px;
+}
+
+.profile .details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile .profile-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile .edit button{
+    background-color: rgb(56, 65, 122);
+    outline: none;
+    color: #FFFFFF;
+    border: 1px solid rgb(56, 65, 122);
+    height: 5vw;
+    padding: 0.5vw;
+    width: 4vw;
+    height: 4vw;
+    font-size: 1.5vw;
+    border-radius: 2vw;
+    box-shadow: 0 0 0.5vw 1px rgba(0, 0, 0, 0.315);
+}
+
+.profile input:disabled{
+    color: #757575;
+    outline: none;
+}
+
+.save button:disabled{
+    background-color: #a19f9f;
+    border: 1px solid #a19f9f;
+}
+
+.profile input[type="file"]{
+    background-color: #FFFFFF !important;
+    margin: 1vw auto;
+    height: unset;
+    text-align-last : center;
+}

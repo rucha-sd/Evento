@@ -1,0 +1,305 @@
+
+.event-image img{
+    width: 100%;
+    height: 15vw;
+}
+
+.event-details{
+    padding: 1vw 1.5vw 1vw;
+}
+
+.event-title{
+    font-size: 1.7vw;
+    font-weight: 500;
+}
+
+.event-org{
+    font-size: 1.1vw;
+    color: #44c41a;
+}
+
+.event-desc{
+    font-size: 1vw;
+    margin-top: 1.2vw;
+}
+
+.event-book button{
+    background-color: #44c41a;
+    border-radius: 3vw;
+    border-color: #44c41a;
+    outline: none;
+    border: 1px solid #44c41a;
+    padding: 0.5vw 0;
+    width: 60%;
+    color: #FFFFFF;
+    font-size: 1.3vw;
+    margin-top: 1.5vw;
+}
+
+.event-book button:hover{
+    background-color: #FFFFFF;
+    color: #44c41a;
+}
+
+.event-contact{
+    color: #686666;
+    font-size: 0.9vw;
+    margin-top: 1vw;
+    text-align: center;
+}
+
+.event-contact a{
+    color: inherit;
+}
+
+.event-location-time{
+    font-size: 1vw;
+    margin: 1vw 0;
+}
+
+.event-location-time .loc{
+    font-size: 1.3vw;
+}
+
+.event-rating{
+    font-size: 1.1;
+}
+
+.event-like{
+    position: absolute;
+    right: 1vw;
+    top: 13.5vw;
+    height: 3vw;
+    width: 3vw;
+}
+
+.event-like.liked button{
+    color: red;
+}
+
+.event-like button{
+    height: 100%;
+    width: 100%;
+    background-color: #aeebf3;
+    border: 1px solid #aeebf3;
+    border-radius: 4vw;
+    font-size: 1.7vw;
+    color: #FFFFFF;
+    outline: none;
+}
+
+button.likebutton:active{
+    transform: scale(1.1);
+    transition: ease-in-out 0.1s;
+}
+
+.event-details-card{
+    padding: 3vw 2vw 2vw;
+    width: 70%;
+    position: fixed;
+    background-color: #FFFFFF;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 0 0 20px 100vw #85828294;
+    z-index: 1035;
+    border-radius: 0.5vw;
+    pointer-events: all;
+}
+
+.event-card-details{
+    font-size: 1.1vw;
+    display: flex;
+    flex-direction: column;
+    color: #444444;
+    line-height: 1.7;
+}
+
+.detail-title{
+    font-size: 1.2vw;
+    font-weight: 500;
+    margin-top: 0.9vw;
+    color: #000000;
+}
+
+.event-details-title{
+    font-size: 1.8vw;
+    font-weight: 500;
+    color: #44c41a;
+}
+
+.event-card-details a{
+    color: inherit;
+}
+
+.event-card-details .reviews button{
+    font-size: 1.3vw;
+    background-color: rgb(56, 65, 122);
+    color: #FFFFFF;
+    border-radius: 3vw;
+    outline: none;
+    border: 1px solid rgb(56, 65, 122);
+    padding: 0.2vw 2vw;
+    margin-top: 1vw;
+}
+
+.event-card-details .reviews button:hover{
+    background-color: #FFFFFF;
+    color: rgb(56, 65, 122);
+}
+
+button.booking {
+    background-color: #44c41a;
+    color: #FFFFFF;
+    border-radius: 3vw;
+    border-color: #44c41a;
+    outline: none;
+    border: 1px solid #44c41a;
+    padding: 0.2vw 2vw;
+    font-size: 1.3vw;
+    margin-top: 1vw;
+    min-width: 9vw;
+}
+
+button.booking:hover {
+    background-color: #FFFFFF;
+    color: #44c41a;
+}
+
+button.close{
+    position: absolute;
+    right: 1vw;
+    top: 1vw;
+    font-size: 1.5vw;
+    outline: none;
+}
+
+
+.booktickets{
+    background: #44c41a;
+    background-size: 200%;
+    transition: .5s ease-out;
+    padding: 8vw;
+    background-position: left;
+}
+
+.booking-label{
+    font-size: 1.5vw;
+    color: #FFFFFF;
+    padding-top: 3vw;
+}
+
+.booktickets button.cancel {
+    color: #FFFFFF;
+    background-color: rgb(255, 51, 0);
+    border-radius: 3vw;
+    padding: 0.2vw 1vw;
+    border: 1px solid rgb(255, 51, 0);
+    font-size: 1.2vw;
+    margin-right: 2vw;
+    outline: none;
+}
+
+.booktickets button.submit {
+    color: #44c41a;
+    background-color: #FFFFFF;
+    border-radius: 3vw;
+    padding: 0.2vw 1vw;
+    border: 1px solid #44c41a;
+    font-size: 1.2vw;
+    outline: none;
+}
+
+.event-reviews{
+    background: rgb(56, 65, 122);
+    background-size: 200%;
+    transition: .5s ease-out;
+    padding: 2vw;
+    background-position: left;
+    padding: 1.5vw;
+    color: #FFFFFF;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-list{
+    height: 14vw;
+    overflow: auto;
+}
+
+.event-reviews .title{
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+}
+
+.rating span{
+    margin-right: 0.2vw;
+    font-size: 1.5vw;
+}
+
+.add-review{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding-top: 1vw;
+}
+
+.add-review select{
+    height: 2vw;
+    width: 100%;
+    margin: 1vw 0;
+}
+
+.add-review textarea{
+    height: 3vw;
+    width: 100%;
+}
+
+.add-review button.send-review{
+    color: rgb(56, 65, 122);
+    background-color: #FFFFFF;
+    border-radius: 3vw;
+    padding: 0.2vw 1vw;
+    border: 1px solid #FFFFFF;
+    font-size: 1.2vw;
+    outline: none;
+}
+
+.add-review button.go-back, .showtickets button.go-back{
+    background-color: transparent;
+    color: #FFFFFF;
+    border: none;
+    margin-top: 1vw;
+    text-decoration: underline;
+    outline: none;
+}
+
+.showtickets{
+    background: #44c41a;
+    background-size: 200%;
+    transition: .5s ease-out;
+    padding: 1vw;
+    background-position: left;
+}
+
+.ticket{
+    padding: 1vw;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1.2vw;
+    margin: 1vw 0;
+    background-color: rgb(56 65 122 / 52%);
+    border-radius: 0.2vw;
+}
+
+.ticket-list{
+    height: 40vh;
+    overflow: auto;
+}
+
+.event-card-image img{
+    width: 100%;
+    height: 100%;
+}
