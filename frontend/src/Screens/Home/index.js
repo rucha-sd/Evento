@@ -82,11 +82,27 @@ const HomeScreen = ({ history }) => {
                 </div>
                     <div className="row mx-0">
                         {
-                            events && typesandcat && events.map((e) => {
-                                return (
-                                    <EventCard key={e.eventDetails._id} event={e} types={typesandcat.Types} categories = {typesandcat.Categories} />
-                                )
-                            })
+                            events && typesandcat && 
+                            <>
+                            {
+                                events.length ? 
+                                <>
+                                {
+                                    events.map((e) => {
+                                        return (
+                                            <EventCard key={e.eventDetails._id} event={e} types={typesandcat.Types} categories = {typesandcat.Categories} />
+                                        )
+                                    })
+                                }
+                                </> : 
+                                <>
+                                <div className="mx-auto text-center">
+                                <div><p className="mx-auto">No favourites</p></div>
+                                <div><img src={empty} width="25%"/></div>
+                                </div>
+                                </>
+                            }
+                            </>
                         }
                     </div>
                 </div>
