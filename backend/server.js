@@ -16,9 +16,6 @@ app.use('/api/event', eventRouter)
 app.use('/api/category', categoryRouter)
 app.use('/api/type', typeRouter)
 
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-
 app.get('/api/typesAndCategories', async(req,res) =>{
     try{
         const Types =  await Type.find({}, {__v:0})
