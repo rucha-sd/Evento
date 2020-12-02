@@ -38,7 +38,16 @@
     outline: none;
 }
 
-.filters select, input[type="date"]{
+.filters select{
+    outline:  none;
+    background-color: transparent;
+    border: none;
+    margin-left: 1vw;
+    color: #FFFFFF;
+}
+
+
+.filters input[type="date"]{
     outline:  none;
     background-color: transparent;
     border: none;

@@ -54,6 +54,27 @@ const AddEvent = ({ history }) => {
         }
     }
 
+
+    const eventImage = async() => {
+        if (event) {
+            const formData = new FormData()
+            formData.append('image', file)
+
+            try {
+                const config = {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }
+
+                const { data } = await Axios.post(`/api/event/${event.eventId}/image`, formData, config)
+            } catch (e) {
+                setMessage('Error in uploading image')
+            }
+        }
+        history.push('/events')
+    } 
+
     const submitHandler = (e) => {
         if (orgName === '' || orgEmail === '' || orgContactNo === '' || name === '' || description === '' || address === '' || city === '' || sTime === '' || sDate === '' || eDate === '' || eTime === '' || type === '' || orgName === '' || noOfSeats === '' || price === '') {
             setMessage('Please fill all details')
@@ -85,24 +106,7 @@ const AddEvent = ({ history }) => {
 
                 dispatch(add(name, categories, type,  description, price, organizer, startTime, endTime, noOfSeats, location, address))
 
-                if (event) {
-                    console.log(event.eventId)
-                    const formData = new FormData()
-                    formData.append('image', file)
-
-                    try {
-                        const config = {
-                            headers: {
-                                'Content-Type': 'multipart/form-data'
-                            }
-                        }
-
-                        const { data } = Axios.post(`/event/${event.eventId}/image`, formData, config)
-                    } catch (e) {
-                        setMessage('Error in uploading image')
-                    }
-                }
-                history.push('/events')
+                eventImage()
             }
         }
     }

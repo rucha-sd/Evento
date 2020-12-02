@@ -5,6 +5,7 @@ import { updateHeader } from '../../Actions/Header'
 import EventCard from '../../Components/EventCard'
 import { favourites, bookedCompleted, bookedUpcoming } from '../../Actions/User'
 import empty from './img/empty.png'
+import { typesAndCategories } from '../../Actions/Event'
 
 const Bookings = ({ history }) => {
 
@@ -28,6 +29,13 @@ const Bookings = ({ history }) => {
             history.push('/login')
         }
     }, [userInfo])
+
+    useEffect(() => {
+        dispatch(typesAndCategories())
+    },[])
+
+    const typesCat = useSelector((state) => state.typeandCat)
+    const { loading: tloading, typesandcat } = typesCat
 
     const bookedCompletedEvents = useSelector((state) => state.bookedCompleted)
     const { loading: bcloading, bookedCompleted: bcompleted } = bookedCompletedEvents
@@ -64,8 +72,8 @@ const Bookings = ({ history }) => {
                                         </> :
                                         bcompleted.bookedEvents.map((e) => {
                                             return (
-                                                <EventCard key={e.eventDetails._id} event={e} />
-                                            )
+                                        <EventCard key={e.eventDetails._id} event={e} types={typesandcat.Types} categories = {typesandcat.Categories} />
+                                        )
                                         })
                                 }
                             </>
@@ -83,8 +91,8 @@ const Bookings = ({ history }) => {
                                         </> :
                                         bupcoming.bookedEvents.map((e) => {
                                             return (
-                                                <EventCard key={e.eventDetails._id} event={e} />
-                                            )
+                                        <EventCard key={e.eventDetails._id} event={e} types={typesandcat.Types} categories = {typesandcat.Categories} />
+                                        )
                                         })
                                 }
                             </>

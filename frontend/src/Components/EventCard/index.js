@@ -5,7 +5,6 @@ import placeholder from './img/placeholder.png'
 import Fontawesome from 'react-fontawesome'
 import { like, dislike, book, review } from '../../Actions/User'
 import Rating from '../Rating'
-import { typesAndCategories } from '../../Actions/Event'
 
 const Ticket = (ticket) => {
     return(
@@ -56,6 +55,8 @@ const EventCard = ({ event, types, categories }) => {
         if(event.eventDetails.categories.includes(C._id))
         ecategories.push(C.name)
     })
+
+    categories && console.log(ecategories)
 
     const likedclass = liked ? ' liked' : ''
 
@@ -203,12 +204,14 @@ const EventCard = ({ event, types, categories }) => {
                                             <div className="row mx-0">
                                                 <div className="col p-0"><Fontawesome name="tag" />&nbsp;
                                                 {
-                                                    ecategories.map((c) => {
+                                                   categories && ecategories.map((c) => {
                                                     return <span key={c} >{c} | </span>
                                                 })
                                                 }
                                                 </div>
-                                                <div className="col p-0 text-right">{type}<Fontawesome name="users" /></div>
+                                                {
+                                                    <div className="col p-0 text-right">{type}<Fontawesome name="users" /></div>
+                                                }
                                             </div>
                                         </>
                                         <>

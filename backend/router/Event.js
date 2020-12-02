@@ -13,15 +13,12 @@ router.post('/add', authenticate, async (req, res) => {
         const event = new Event(req.body)
         event.availableSeats = req.body.noOfSeats
         if(!event.location.latitude || !event.location.longitude){
-          console.log(req.body.address)
             geocode( req.body.address, (error, {latitude, longitude, location} = {}) => {
               if(error){
                   console.log(error)
               }else{
                 event.location.latitude = latitude
                 event.location.longitude = longitude
-                console.log(latitude, longitude)
-                console.log(event.location)
                 event.save()
               }
           })
@@ -29,7 +26,6 @@ router.post('/add', authenticate, async (req, res) => {
         await event.save()
         res.status(200).send({ error: false, message: 'Event Added', eventId : event._id })
     } catch (e) {
-        console.log(e)
         res.status(500).send({ error: true, message: 'Error in adding event'})
     }
 })
@@ -183,11 +179,9 @@ router.post('/sorted', authenticate, async (req, res) => {
             }
         })
 
-        console.log(sortedbyCity.length)
         await res.status(200).send({ error: false, sorted:sortedbyCity})
     }
     catch (e) {
-        console.log(e)
         res.status(400).send({ error: true, message: 'Events not found' })
     }
 })
@@ -232,6 +226,18 @@ router.get('/image/:id', async (req, res) => {
       res.send(event.image)
   } catch (e) {
       res.status(404).send({error:true, message:'Profile picture not found'})
+  }
+})
+
+router.get('/typesAndCategories', async(req,res) =>{
+  try{
+      const Types =  await Type.find({}, {__v:0})
+      const Categories =  await Category.find({}, {__v:0})
+      res.status(201).send({error:false, Types, Categories})
+  }
+  catch(e)
+  {
+      res.status(400).send({error:true})
   }
 })
 
