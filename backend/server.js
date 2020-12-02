@@ -8,13 +8,16 @@ const typeRouter = require( './router/Type')
 const Category = require( './model/Category')
 const Type = require( './model/Type')
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT || 5000
 
 app.use(express.json())
 app.use('/api/user', userRouter)
 app.use('/api/event', eventRouter)
 app.use('/api/category', categoryRouter)
 app.use('/api/type', typeRouter)
+
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 app.get('/api/typesAndCategories', async(req,res) =>{
     try{
