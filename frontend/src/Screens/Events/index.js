@@ -80,7 +80,7 @@ const Events = ({ history }) => {
                                                     <div style={{ opacity: "0.5" }}><img src={empty} width="25%" /></div>
                                                 </div>
                                             </> :
-                                            rcompleted.registeredEvents.map((e) => {
+                                            typesandcat && rcompleted.registeredEvents.map((e) => {
                                                 return (
                                                     <EventCard key={e.eventDetails._id} event={e} types={typesandcat.Types} categories={typesandcat.Categories} />
 
@@ -110,7 +110,7 @@ const Events = ({ history }) => {
                                                             <div style={{ opacity: "0.5" }}><img src={empty} width="25%" /></div>
                                                         </div>
                                                     </> :
-                                                    rupcoming.registeredEvents.map((e) => {
+                                                    typesandcat && rupcoming.registeredEvents.map((e) => {
                                                         return (
                                                             <EventCard key={e.eventDetails._id} event={e} types={typesandcat.Types} categories={typesandcat.Categories} />
 

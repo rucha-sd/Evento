@@ -71,7 +71,7 @@ export const sortEvents = (date, city, categories) => async (dispatch, getState)
       }
 }
 
-export const add = (name, categories, type, description, price, organizer, startTime, endTime, noOfSeats, location, address) => async (dispatch, getState) =>  {
+export const add = (name, categories, eventType, description, price, organizer, startTime, endTime, noOfSeats, location, address) => async (dispatch, getState) =>  {
   try {
       dispatch({ type: EVENT_ADD_REQUEST })
 
@@ -86,7 +86,7 @@ export const add = (name, categories, type, description, price, organizer, start
       }
       const { data } = await axios.post(
         `/api/event/add`,
-        {name, categories, type, description, price, organizer, startTime, endTime, noOfSeats, location, address},
+        {name, categories, eventType, description, price, organizer, startTime, endTime, noOfSeats, location, address},
         config
       )
   
@@ -94,6 +94,7 @@ export const add = (name, categories, type, description, price, organizer, start
         type: EVENT_ADD_SUCCESS,
         payload: data,
       })
+
     } catch (error) {
       dispatch({
         type: EVENT_ADD_FAIL,

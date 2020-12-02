@@ -22,7 +22,8 @@ const HomeScreen = ({ history }) => {
     useEffect(() => {
         dispatch(updateHeader({ headerDisplay: 'flex', active: 'home' }))
         if (userInfo) {
-            dispatch(sortEvents(date, city))
+        dispatch(typesAndCategories())
+        dispatch(sortEvents(date, city))
         }
         else {
             history.push('/login')
@@ -33,9 +34,6 @@ const HomeScreen = ({ history }) => {
         dispatch(getEvents())
     }, [])
 
-    useEffect(() => {
-        dispatch(typesAndCategories())
-    }, [])
 
     const typesCat = useSelector((state) => state.typeandCat)
     const { loading: tloading, typesandcat } = typesCat

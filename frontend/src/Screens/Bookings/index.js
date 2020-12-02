@@ -70,11 +70,11 @@ const Bookings = ({ history }) => {
                                                 <div style={{ opacity: "0.5" }}><img src={empty} width="25%" /></div>
                                             </div>
                                         </> :
-                                        bcompleted.bookedEvents.map((e) => {
+                                        <>{typesandcat && bcompleted.bookedEvents.map((e) => {
                                             return (
-                                        <EventCard key={e.eventDetails._id} event={e} types={typesandcat.Types} categories = {typesandcat.Categories} />
+                                            <EventCard key={e.eventDetails._id} event={e} types={typesandcat.Types} categories = {typesandcat.Categories} />
                                         )
-                                        })
+                                        })}</>
                                 }
                             </>
                         }
@@ -89,7 +89,7 @@ const Bookings = ({ history }) => {
                                                 <div style={{ opacity: "0.5" }}><img src={empty} width="25%" /></div>
                                             </div>
                                         </> :
-                                        bupcoming.bookedEvents.map((e) => {
+                                        typesandcat && bupcoming.bookedEvents.map((e) => {
                                             return (
                                         <EventCard key={e.eventDetails._id} event={e} types={typesandcat.Types} categories = {typesandcat.Categories} />
                                         )

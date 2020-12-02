@@ -198,12 +198,15 @@ const upload = multer({
 })
 
 router.post('/:id/image', upload.single('image'), async (req, res) => {
+  console.log(req.fromData)
   const buffer = await sharp(req.file.buffer).resize({ width: 333, height: 250 }).png().toBuffer()
   const event = await Event.findOne({_id:req.params.id})
   event.image = buffer
+  console.log(event)
   await event.save()
   res.send({error:false})
 }, (error, req, res, next) => {
+  console.log(error)
   res.status(400).send({ error: true, message:error.message })
 })
 

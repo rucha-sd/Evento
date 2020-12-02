@@ -52,7 +52,7 @@ const Favourites = ({ history }) => {
                                                     <div><img src={empty} width="25%" /></div>
                                                 </div>
                                             </> :
-                                            favEvents.likedEvents.map((e) => {
+                                            typesandcat && favEvents.likedEvents.map((e) => {
                                                 return (
                                                     <EventCard key={e.eventDetails._id} event={e} types={typesandcat.Types} categories={typesandcat.Categories} />
                                                 )

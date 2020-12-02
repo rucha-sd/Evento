@@ -44,10 +44,6 @@ const EventCard = ({ event, types, categories }) => {
         return event.eventDetails.image 
     }
 
-    const type = event.eventDetails.eventType ? types.filter((t) => { 
-        if(t._id === event.eventDetails.eventType)
-        return t
-     }) : ''
 
     var ecategories = []
 
@@ -55,8 +51,6 @@ const EventCard = ({ event, types, categories }) => {
         if(event.eventDetails.categories.includes(C._id))
         ecategories.push(C.name)
     })
-
-    categories && console.log(ecategories)
 
     const likedclass = liked ? ' liked' : ''
 
@@ -67,6 +61,8 @@ const EventCard = ({ event, types, categories }) => {
         document.body.style.overflow = "auto"
         document.body.style.pointerEvents = 'auto'
     }
+
+    
 
     const mailto = `mailto:${event.eventDetails.organizer.orgEmail}`
 
@@ -106,6 +102,7 @@ const EventCard = ({ event, types, categories }) => {
         }
         else{
             dispatch(review(event.eventDetails._id, comment, rating))
+            window.location.reload()
         }
     }
 
@@ -210,7 +207,7 @@ const EventCard = ({ event, types, categories }) => {
                                                 }
                                                 </div>
                                                 {
-                                                    <div className="col p-0 text-right">{type}<Fontawesome name="users" /></div>
+                                                    types && types.length && <div className="col p-0 text-right">{types[0].name} <Fontawesome name="users" /></div>
                                                 }
                                             </div>
                                         </>
