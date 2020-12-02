@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { updateHeader } from '../../Actions/Header'
 import { sortEvents, typesAndCategories, getEvents } from '../../Actions/Event'
 import EventCard from '../../Components/EventCard'
+import empty from './img/empty.png'
 import $ from 'jquery'
 
 const HomeScreen = ({ history }) => {
