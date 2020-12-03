@@ -52,6 +52,13 @@ const EventCard = ({ event, types, categories }) => {
         ecategories.push(C.name)
     })
 
+    var etype = ''
+
+        types && types.forEach((t) => {
+            if(event.eventDetails.eventType === t._id)
+                etype = t.name
+    })
+
     const likedclass = liked ? ' liked' : ''
 
     if (detail) {
@@ -124,7 +131,7 @@ const EventCard = ({ event, types, categories }) => {
                             <div className="event-org col p-0 text-left">by {event.eventDetails.organizer.orgName}</div>
                             {
                                 event.started && 
-                                <div className="event-rating col p-0 text-right">{event.eventDetails.avgRating} <Fontawesome name="star" style={{ color: "#FFE234" }} /> <Fontawesome name="caret-right" /> {event.eventDetails.totalRating} <Fontawesome name="user" style={{ color: "rgb(56, 65, 122)" }} /></div>
+                                <div className="event-rating col p-0 text-right">{Math.round(event.eventDetails.avgRating)} <Fontawesome name="star" style={{ color: "#FFE234" }} /> <Fontawesome name="caret-right" /> {event.eventDetails.totalRating} <Fontawesome name="user" style={{ color: "rgb(56, 65, 122)" }} /></div>
                             }
                         </div>
                         <div className="event-location-time row mx-0">
@@ -160,7 +167,7 @@ const EventCard = ({ event, types, categories }) => {
                                             <div className="col p-0 event-details-title">{event.eventDetails.name}</div>
                                             {
                                                 event.started &&
-                                                <div className="col p-0 text-right" style={{ fontSize: "1.4vw", alignSelf: "flex-end" }}>{event.eventDetails.avgRating} <Fontawesome name="star" style={{ color: "#FFE234" }} /> <Fontawesome name="caret-right" /> {event.eventDetails.totalRating} <Fontawesome name="user" style={{ color: "rgb(56, 65, 122)" }} /></div>
+                                                <div className="col p-0 text-right" style={{ fontSize: "1.4vw", alignSelf: "flex-end" }}>{Math.round(event.eventDetails.avgRating)} <Fontawesome name="star" style={{ color: "#FFE234" }} /> <Fontawesome name="caret-right" /> {event.eventDetails.totalRating} <Fontawesome name="user" style={{ color: "rgb(56, 65, 122)" }} /></div>
                                             }
                                         </div>
                                         <>
@@ -190,10 +197,10 @@ const EventCard = ({ event, types, categories }) => {
                                             </div>
                                         </>
                                         <>
-                                            <div className="detail-title">Available Tickets and Pricing</div>
+                                            <div className="detail-title">Tickets and Pricing</div>
                                             <div className="row mx-0">
                                                 <div className="col p-0"><Fontawesome name="money" /> Rs. {event.eventDetails.price}</div>
-                                                <div className="col p-0 text-right">{event.eventDetails.availableSeats} left <Fontawesome name="ticket" /></div>
+                                                {!event.end && <div className="col p-0 text-right">{event.eventDetails.availableSeats} left <Fontawesome name="ticket" /></div>}
                                             </div>
                                         </>
                                         <>
@@ -207,7 +214,7 @@ const EventCard = ({ event, types, categories }) => {
                                                 }
                                                 </div>
                                                 {
-                                                    types && types.length && <div className="col p-0 text-right">{types[0].name} <Fontawesome name="users" /></div>
+                                                    types && etype!='' && <div className="col p-0 text-right">{etype} <Fontawesome name="users" /></div>
                                                 }
                                             </div>
                                         </>
@@ -309,7 +316,7 @@ const EventCard = ({ event, types, categories }) => {
                                                 setShowDetails(true)
                                                 setShowreviews(false)}
                                             }
-                                            >Go back ></button>
+                                            >Go back &gt;</button>
                                         </div>
                                         </div>
                                         </div>
@@ -334,7 +341,7 @@ const EventCard = ({ event, types, categories }) => {
                                                 setShowDetails(true)
                                                 setShowTickets(false)}
                                             }
-                                            >Go back ></button>
+                                            >Go back &gt;</button>
                                     </div>
                                 </>
                             }
