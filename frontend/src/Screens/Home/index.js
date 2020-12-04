@@ -22,8 +22,8 @@ const HomeScreen = ({ history }) => {
     useEffect(() => {
         dispatch(updateHeader({ headerDisplay: 'flex', active: 'home' }))
         if (userInfo) {
-        dispatch(typesAndCategories())
-        dispatch(sortEvents(date, city))
+            dispatch(typesAndCategories())
+            dispatch(sortEvents(date, city))
         }
         else {
             history.push('/login')

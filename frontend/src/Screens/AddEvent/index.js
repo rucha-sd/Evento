@@ -92,7 +92,7 @@ const AddEvent = ({ history }) => {
     }
 
 
-    useEffect(() => {
+    useEffect(async() => {
         if (event && file && event.eventId) {
             const formData = new FormData()
             formData.append('image', file)
@@ -107,7 +107,7 @@ const AddEvent = ({ history }) => {
                     }
                 }
 
-                const { data } = Axios.post(`/api/event/${event.eventId}/image`, formData, config)
+                const { data } = await Axios.post(`/api/event/${event.eventId}/image`, formData, config)
                 history.push('/events')
                 window.location.reload()
 

@@ -141,7 +141,6 @@ const EventCard = ({ event, types, categories }) => {
                                 <>To-{new Date(event.eventDetails.endTime).toDateString()} <Fontawesome name="calendar" /> </>
                             </div>
                         </div>
-                        {/* <div className="event-desc">{event.eventDetails.description}</div> */}
                         <div className="event-book text-center"><button onClick={() => { setDetail(!detail) }}>View Details</button></div>
                         <div className="event-contact">
                             <Fontawesome name="phone" /> {event.eventDetails.organizer.orgContactNo} | <a href={mailto}><Fontawesome name="envelope" /> {event.eventDetails.organizer.orgEmail}</a>
